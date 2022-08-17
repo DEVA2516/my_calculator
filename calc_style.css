@@ -1,15 +1,50 @@
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+
 
 .layout {
-    margin-left: 600px;
+   /* display: flex;
+    justify-content: center;
+    */
+    background-color: #1c1c1c;
     margin-top: 100px;
-    height: 350px;
-    width: 350px;
-    border: 1px solid;
+    height: 450px;
+    width: 276px;
 }
 
 .output{
     display: flex;
-    height: 100px;
+    height: 150px;
     justify-content: end;
+    color: white;
+    font-size: x-large;
     align-items: end;
+}
+
+button {
+    color: white;
+    background-color: #505050;
+    border-radius: 51px;
+    width: 51px;
+    padding:12px;
+    border-style: hidden;
+    margin:3px 10px;
+
+}
+
+.bts{
+    background-color: #FF9500;
+}
+
+.bta {
+   
+    background-color : #d4d4d2;
+    color: #000;
+}
+
+#bt0{
+    width:108px;
 }
