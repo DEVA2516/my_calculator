@@ -1,0 +1,15 @@
+
+.layout {
+    margin-left: 600px;
+    margin-top: 100px;
+    height: 350px;
+    width: 350px;
+    border: 1px solid;
+}
+
+.output{
+    display: flex;
+    height: 100px;
+    justify-content: end;
+    align-items: end;
+}
