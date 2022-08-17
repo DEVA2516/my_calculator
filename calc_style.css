@@ -1,7 +1,7 @@
 .container-fluid {
     display: flex;
     justify-content: center;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 
@@ -11,7 +11,7 @@
     */
     background-color: #1c1c1c;
     margin-top: 100px;
-    height: 450px;
+    height: 460px;
     width: 276px;
 }
 
@@ -46,5 +46,6 @@ button {
 }
 
 #bt0{
-    width:108px;
+    width:115px;
+    text-align: start;
 }

@@ -10,43 +10,47 @@
 
     <link rel="stylesheet" href="./calc_style.css">
     <title>Calci</title>
+
+
 </head>
 
+
 <body>
+
     <div class="container-fluid">
         <div class="row layout">
-            <div class="row output">0</div>
-            
+            <div class="row output " id='ans'>0</div>
+
             <div class="row">
-                <div class="col-3"><button class = 'bta'> AC </button></div>
-                <div class="col-3"><button class = 'bta'> +/- </button></div>
-                <div class="col-3"> <button class = 'bta'> % </button></div>
-                <div class="col-3"><button class = 'bts' > ÷ </button></div>
+                <div class="col-3"><button class='bta' type='button'> AC </button></div>
+                <div class="col-3"><button class='bta' type='button'> +/- </button></div>
+                <div class="col-3"> <button class='bta' type='button'> % </button></div>
+                <div class="col-3"><button class='bts' type='button'> ÷ </button></div>
             </div>
             <div class="row">
-                <div class="col-3"> <button> 7</button></div>
-                <div class="col-3"> <button> 8</button></div>
-                <div class="col-3"> <button> 9 </button></div>
-                <div class="col-3"> <button class = 'bts'>*</button></div>
+                <div class="col-3"> <button type="button"> 7</button></div>
+                <div class="col-3"> <button type="button"> 8</button></div>
+                <div class="col-3"> <button type="button"> 9 </button></div>
+                <div class="col-3"> <button class='bts' type='button'>*</button></div>
             </div>
             <div class="row">
-                <div class="col-3"> <button> 4 </button></div>
-                <div class="col-3"> <button> 5 </button></div>
-                <div class="col-3"> <button> 6 </button></div>
-                <div class="col-3"> <button class = 'bts'> - </button></div>
+                <div class="col-3"> <button type="button"> 4 </button></div>
+                <div class="col-3"> <button type="button"> 5 </button></div>
+                <div class="col-3"> <button type="button"> 6 </button></div>
+                <div class="col-3"> <button class='bts' type='button'> - </button></div>
             </div>
             <div class="row">
-                <div class="col-3"> <button> 3 </button> </div>
-                <div class="col-3"> <button> 2 </button> </div>
-                <div class="col-3"> <button> 1 </button></div>
-                <div class="col-3"> <button class ='bts' > + </button></div>
+                <div class="col-3"> <button type="button"> 3 </button> </div>
+                <div class="col-3"> <button type="button"> 2 </button> </div>
+                <div class="col-3"> <button type="button"> 1 </button></div>
+                <div class="col-3"> <button class='bts' type='button'> + </button></div>
             </div>
             <div class="row">
-                <div class="col-6"> <button id = "bt0"> 0 </button> </div>
+                <div class="col-6"> <button id="bt0"> 0 </button> </div>
                 <div class="col-6">
                     <div class="row">
-                        <div class="col-6"><button> . </button> </div>
-                        <div class="col-6"><button class = "bts"> = </button></div>
+                        <div class="col-6"><button type="button"> . </button> </div>
+                        <div class="col-6"><button class="bts" type="button"> = </button></div>
                     </div>
                 </div>
             </div>
@@ -54,6 +58,45 @@
         </div>
     </div>
 
+    <script>
+        var a = '';
+        var query = document.getElementsByTagName("button");
+        //console.log(query.length);
+
+        for (i = 0; i < query.length; i++) {
+
+            query[i].addEventListener('click', function () {
+                
+                a = this.innerText;
+
+                if (a == 'AC') {
+                    a = '';
+                    document.getElementById('ans').innerText = '';
+                }
+                else
+                    document.getElementById('ans').innerText += a;
+            }
+
+            );
+
+        }
+
+        // });
+
+        // }
+        // function myfunction(event) {
+        //     if (event.target.innerText == 'AC') {
+        //         a = '';
+        //         document.getElementById('ans').innerText = 0;
+        //     }
+        //     else {
+        //         a += event.target.innerText;
+        //         console.log(event);
+        //         document.getElementById('ans').innerText = a;
+        //     }
+
+        // }
+    </script>
 </body>
 
 </html>
