@@ -64,7 +64,7 @@
         //console.log(query.length);
 
         for (i = 0; i < query.length; i++) {
-
+ 
             query[i].addEventListener('click', function () {
                 
                 a = this.innerText;
@@ -73,6 +73,11 @@
                     a = '';
                     document.getElementById('ans').innerText = '';
                 }
+
+                else if (a == '='){
+                    
+                }
+
                 else
                     document.getElementById('ans').innerText += a;
             }
