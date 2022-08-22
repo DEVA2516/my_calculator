@@ -64,9 +64,9 @@
         //console.log(query.length);
 
         for (i = 0; i < query.length; i++) {
- 
+
             query[i].addEventListener('click', function () {
-                
+
                 a = this.innerText;
 
                 if (a == 'AC') {
@@ -74,8 +74,11 @@
                     document.getElementById('ans').innerText = '';
                 }
 
-                else if (a == '='){
-                    
+                else if (a == '=') {
+                    const calc = a;
+                    let fetres =  fetch('http://localhost:3000/calc');
+                        fetres.then((response) => response.json())
+                        .then((data) => console.log(data));
                 }
 
                 else
