@@ -23,9 +23,9 @@
 
     <div class="container">
         <form action="" id = "myform">
-            <label for="name">Name:</label>
+            <label for="name">Name: &nbsp;</label>
             <input type="text" name='Username' id="name" value=''><br> <br>
-            <label for="email">Email:</label>
+            <label for="email">Email: &nbsp;</label>
             <input type="email" name="mail" id = "email" value=''><br> <br>
             <label for="msg">Message:</label>
             <textarea name="msg" rows=2 cols=25 id = "msg" value=""> </textarea><br> <br>
@@ -41,6 +41,8 @@
             var umail = document.getElementById("email").value;
             var umsg = document.getElementById("msg").value;
             console.log(uname,umail,umsg);
+
+            fetch()
 
             //console.log(document.getElementById("myform").elements[1].value);
         }

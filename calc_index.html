@@ -68,17 +68,19 @@
             query[i].addEventListener('click', function () {
 
                 a = this.innerText;
-
                 if (a == 'AC') {
                     a = '';
                     document.getElementById('ans').innerText = '';
                 }
 
                 else if (a == '=') {
-                    const calc = a;
-                    let fetres =  fetch('http://localhost:3000/calc');
-                        fetres.then((response) => response.json())
-                        .then((data) => console.log(data));
+                    var calc = document.getElementById('ans').innerText;
+                    fetch('http://localhost:3001/?calc=' + encodeURIComponent(calc)).then(res => { 
+                        res.text().then(data => document.getElementById("ans").innerText = data);
+                     }); // then is promise response is send to callback  
+                        // http request is promise so use then
+                        // fetch is async whenever    
+
                 }
 
                 else
