@@ -41,9 +41,20 @@
             var umail = document.getElementById("email").value;
             var umsg = document.getElementById("msg").value;
             console.log(uname,umail,umsg);
+            let obj = {
+                    'name':uname,
+                    'email':umail,
+                    'message':umsg
+                };
 
-            fetch()
-
+           function getPostData(){
+               fetch ("http://localhost:3001/postdata",{
+                method :'POST',
+                body : JSON.stringify(obj),
+                headers:{'Content-Type':"application/json"}
+            }).then(res => console.log(res));
+        }
+        getPostData();
             //console.log(document.getElementById("myform").elements[1].value);
         }
     </script>
