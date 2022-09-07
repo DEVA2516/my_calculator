@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>list-form</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,42 +28,52 @@
         svg {
             height: 20px;
         }
-
+        
     </style>
 
 <body>
-    <table id = "mytable">
-    <tr>
-        <th>Name &nbsp;</th>
-        <th>Email &nbsp;</th>
-        <th>Message &nbsp;</th>
-        <th>Action &nbsp; &nbsp; <i id='edit' class="fa-solid fa-user-pen"></i>
-            &nbsp; &nbsp; <i class="fa-solid fa-eraser"></i></th>
-    </tr>
-    <tbody id="mytablebody"> </tbody>
-</table>
+    <table id="mytable">
+        <tr>
+            <th>Name &nbsp;</th>
+            <th>Email &nbsp;</th>
+            <th>Message &nbsp;</th>
+            <th>Action</th>
+        </tr>
+        <tbody id="mytablebody"> </tbody>
+    </table>
 
 
     <script>
-        function viewUserDetails(){
-        fetch("http://localhost:3001/sql").then(res => {
-            res.json().then(val => {
-                console.log(val.data[0].name);
-                let details = val.data;
-                var view = '';
-                console.log(details);
-                for (let i=0;i<details.length-1;i++){
-                    console.log(details[i].name);
-                    console.log(details[i].email);
-                    console.log(details[i].message);
-                    view += "<tr><td>"+ details[i].name+ "</td><td>"+ details[i].email+ "</td><td>"+details[i].message+"</td></tr>";
-                }
-                document.getElementById("mytablebody").innerHTML= view; 
-            })
-        });
-    }
+        function viewUserDetails() {
+            fetch("http://localhost:3001/sql").then(res => {
+                res.json().then(val => {
+                    console.log(val.data[0].name);
+                    
+                    let details = val.data;
+                    var view = '';
+                    
+                    del = " <i class='fa-solid fa-eraser'></i>"
+                    //console.log(details);
+                    
+                    for (let i = 0; i < details.length; i++) {
+                        // console.log(details[i].name);
+                        // console.log(details[i].email);
+                        // console.log(details[i].message);
+                        view += "<tr><td>"+ details[i].name + "</td><td>" + details[i].email + 
+                            "</td><td>" + details[i].message + "</td><td>" + '<button type="button" class="btn btn-outline-light" onclick ="getuserbyid(' + details[i].id + ")" + '<i class="fa-solid fa-user-pen"></i></button>' + "</td><td>" +
+                             del + "</td></tr>";
+                    }
+                    document.getElementById("mytablebody").innerHTML = view;
+                })
+            });
+        }
 
-    viewUserDetails();
+        viewUserDetails();
+
+
+      function getuserbyid(id){
+        console.log(id);
+      }
     </script>
 
 </body>
